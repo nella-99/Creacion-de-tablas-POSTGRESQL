@@ -1,0 +1,37 @@
+
+
+create table ALUMNO (
+   IDALUMNO             int                  not null,
+   IDREPRESENTANTE      int                  null,
+   A_EDAD               int                  null,
+   A_NOMBRE             varchar(50)          null,
+   A_APELLIDO           varchar(50)          null,
+   constraint PK_ALUMNO primary key (IDALUMNO)
+)
+
+
+create table HORARIO (
+   IDHORARIO            int                  not null,
+   JORNADA              varchar(25)          null,
+   HORA                 time         	     null,
+   constraint PK_HORARIO primary key (IDHORARIO)
+)
+
+create table REGISTROALUMNO (
+   IDREGISTRO           int                  not null,
+   IDALUMNO             int                  not null,
+   IDHORARIO            int                  not null,
+   DIA_DE_REGISTRO      datetime             null,
+   constraint PK_REGISTROALUMNO primary key (IDHORARIO, IDALUMNO, IDREGISTRO)
+)
+
+
+create table REPRESENTANTE (
+   IDREPRESENTANTE      int                  not null,
+   R_CONTACTO           varchar(10)          null,
+   R_CORREO             varchar(50)          null,
+   R_PARENTESCO         varchar(40)          null,
+   R_NOMBRE             varchar(50)          null,
+   R_APELLIDOS          varchar(50)          null,
+   constraint PK_REPRESENTANTE primary key (IDREPRESENTANTE)
+)
